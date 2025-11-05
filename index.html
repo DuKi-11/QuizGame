@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FInal result</title>
+    <link rel="stylesheet"href="style.css">
+</head>
+<body>
+    <div class=" container">
+        <!-- Start Screen -->
+        <div class="StartScreen active"id="startScreen">
+            <h1 class="StartH1"id="startH1">Quiz Time!</h1>
+            <p class="startP"id="startP">Test your knowledge with these fun questions</p>
+            <button class="Btn"id="startBtn">Start Quiz</button>
+        </div>
+        <!-- Question Screen -->
+        <div class="QuestionScreen"id="questionScreen">
+            <h2 class="questionh2"id="questions">Question for H2</h2>
+            <p class="questionP">Question<spam  id="currentQuestion"> 1 </spam><spam> of </spam><spam id="maxQuestion"> 5 </spam></p>
+            <p class="Score">Score:<spam id="currentScore">0</spam></p>
+                <div class="answerContainer"id="answerContainer"></div>
+                <div class="progressbar"id="progressBar"></div>
+        </div> 
+        <!-- restart screen -->
+        <div class="restartScreen"id="resultScreen">
+            <h2>Quiz Result</h2>
+            <p class="restarP"id=restartP>You scored<spam id="finalScore"> 1 </spam> of <spam  id="maxScore"> 5 </spam></p>
+            <p class="rseultP"id='resultP'></p>
+            <button class="Btn"id="restartBtn">Restart Quiz</button>
+        </div>
+        
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

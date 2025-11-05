@@ -1,0 +1,272 @@
+/* === General Reset === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* === Body === */
+  body {
+    background-color: #f4f4f9;
+    color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+  /* === Container === */
+  .container {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    animation: fadeIn 0.6s ease;
+  }
+  
+  .container:hover {
+    transform: translateY(-4px);
+  }
+  
+  /* === Start Screen === */
+  .StartScreen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    animation: fadeIn 0.6s ease;
+  }
+  
+  .StartH1 {
+    font-size: 2.2rem;
+    color: #333;
+    font-weight: 700;
+  }
+  
+  .startP {
+    font-size: 1rem;
+    color: #666;
+    max-width: 300px;
+  }
+  
+  /* === Question Screen === */
+  .QuestionScreen {
+    display: none;
+    flex-direction: column;
+    animation: fadeIn 0.6s ease;
+  }
+  
+  .QuestionH2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #222;
+  }
+  
+  .questionP {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .Score {
+    font-weight: 600;
+    margin: 1rem 0;
+    color: #222;
+  }
+  
+  /* === Answer Buttons === */
+  .answerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1rem;
+  }
+  
+  .answerContainer button {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 12px;
+    background-color: #fafafa;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+    text-align: left;
+    transition: all 0.25s ease;
+  }
+  
+  .answerContainer button:hover {
+    background-color: #efefef;
+    transform: scale(1.02);
+  }
+  
+  .correct {
+    background-color: #4caf50 !important;
+    color: #fff;
+    border-color: #4caf50;
+  }
+  
+  .incorrect {
+    background-color: #f44336 !important;
+    color: #fff;
+    border-color: #f44336;
+  }
+  
+  /* === Progress Bar === */
+  .progressbar {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 8px;
+    margin-top: 1rem;
+    overflow: hidden;
+  }
+  
+  .progressbar::after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 0%;
+    background-color: #3b82f6;
+    border-radius: 8px;
+    transition: width 0.5s ease;
+  }
+  
+  /* === Result Screen === */
+    .restartScreen {
+    display: none;
+    flex-direction: column;
+    animation: fadeIn 0.6s ease;
+    }
+    
+    .restartScreen h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+    }
+    
+    .restartP {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    }
+  
+    .resultP {
+    font-size: 1rem;
+    color: #666;
+    }
+  
+  /* === Buttons === */
+    .Btn {
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+  
+  .Btn:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+    }
+  
+  .Btn:active {
+    transform: translateY(0);
+    }
+  
+  /* === Active Class === */
+    .active {
+    display: flex !important;
+    flex-direction: column;
+    }
+  
+  /* === Animations === */
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+  
+  /* === Responsive Design === */
+  @media (max-width: 768px) {
+    .container {
+      padding: 1.5rem;
+    }
+  
+    .StartH1 {
+      font-size: 1.8rem;
+    }
+  
+    .Btn {
+      width: 100%;
+      padding: 12px;
+    }
+  
+    .answerContainer button {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .StartH1 {
+      font-size: 1.5rem;
+    }
+  
+    .startP {
+      font-size: 0.9rem;
+    }
+  
+    .Btn {
+      font-size: 0.9rem;
+    }
+  
+    .answerContainer button {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  }
+  /* Hide all screens by default */
+.QuestionScreen,
+.restartScreen {
+  display: none;
+}
+
+/* Show only the one that has .active */
+.active {
+  display: flex !important;
+  flex-direction: column;
+}
+.progressbar {
+    position: relative;
+    background-color: #eee;
+    border-radius: 10px;
+    height: 10px;
+    overflow: hidden;
+  }
+  
+  .progressbar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: #3b82f6; /* Blue color */
+    transition: width 0.5s ease;
+    border-radius: 10px;
+  }
+  
